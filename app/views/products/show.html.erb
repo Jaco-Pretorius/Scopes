@@ -1,0 +1,6 @@
+<h1><%= @product.name %></h1>
+<p><%= @product.description %></p>
+<p>Status: <%= @product.status %></p>
+<%= link_to 'Back to Products', products_path %>
+<%= link_to 'Edit', edit_product_path(@product) %>
+<%= button_to 'Delete', @product, :confirm => "Are you sure you want to delete #{@product.name}?", :method => :delete %>

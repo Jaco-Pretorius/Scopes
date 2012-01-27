@@ -1,0 +1,16 @@
+<h1>Products</h1>
+<ul>
+<% @products.each do |product| %>
+  <li class="deleted_<%=product.deleted%>">
+    <% if product.deleted? %>
+      <%= link_to "#{product.name} - #{product.status} - Deleted", product_path(product) %>
+    <% else %>
+      <%= link_to "#{product.name} - #{product.status}", product_path(product) %>
+    <% end %>
+  </li>
+<% end %>
+</ul>
+<%= link_to 'All', products_path %>
+<%= link_to 'In-Stock', available_products_path %>
+<%= link_to 'Unavailable', unavailable_products_path %>
+<%= link_to 'New', new_product_path %>

@@ -1,0 +1,19 @@
+<%= form_for @product do |f| %>
+  <div>
+    <%= f.label :name, 'Name:' %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :description, 'Description:' %>
+  </div>
+  <div>
+    <%= f.text_area :description, :size => "60x12" %>
+  </div>
+  <div>
+    <%= f.label :status, 'Status:' %>
+    <%= f.select( :status, [['Available','Available'],['Sold Out','Sold Out'],['Coming Soon','Coming Soon']] ) %>
+  </div>
+  <div>
+    <%= f.submit 'Save it!' %>
+  </div>
+<% end %>
